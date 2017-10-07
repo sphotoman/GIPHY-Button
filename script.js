@@ -1,17 +1,18 @@
-
+$(document).ready(function() {
 
 //array of animals as the basis for the button
 
 var animals;
 animals = ['dog', 'pony', 'cat', 'cow', 'pig', 'duck', 'lemming'];
-// makeNewButtons();
+makeNewButtons();
 
 //putting animal name buttons on the page
 
-// function makeNewButtons(){
-
+function makeNewButtons(){
+	console.log('click')
+	$("#animalButtons").empty();
 	for (i=0; i<animals.length; i++){
-		$("#animalButtons").append();
+		// $("#animalButtons").append();
 		var newButton = $("<button>");
 		newButton.attr('id', animals[i]);
 
@@ -21,10 +22,10 @@ animals = ['dog', 'pony', 'cat', 'cow', 'pig', 'duck', 'lemming'];
 		$("#animalButtons").append(newButton);
 
 	};
-// }
+}
 
 //get form info and push into array
-$(document).ready(function() {
+
     $('#myButton').click(function() {
        event.preventDefault()
        console.log("form value: " + $('#formValueId').val());
@@ -32,10 +33,10 @@ $(document).ready(function() {
 	animals.push($('#formValueId').val());
 	// clear text field on form
     console.log('appended animal array? ' + animals)
-
+    makeNewButtons();
     });
 
-});
+
 
  
 // on button click go search for - 
@@ -82,4 +83,5 @@ event.preventDefault()
 		} 
 	})
 	
+})
 })
